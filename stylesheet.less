@@ -1,0 +1,797 @@
+/*	===============================
+	Table of Contents
+	===============================
+	- Colour Swatches
+	- Font Swatches
+	- Boostrap Import
+	- Template Styles
+		1.  Globals
+		2.  Header
+		3.  Navigation
+		4.  Home
+		5.  Menu
+		6.  Blog List
+		7.  Blog Post
+		8.  Forms
+		9.  Gallery / Images / Slideshow
+		10. Footer
+		11. Misc
+		12. Responsive
+	=============================== */
+
+/*	===============================
+	Colour Swatches
+	===============================	
+	"color1": == Background
+	"color2": == Contrast colour
+	"color3": == Button colour
+	"color4": == Title colour
+	"color5": == Paragraph colour
+	"color6": == Nav text colour
+	"color7": == Header BG colour
+	=============================== */
+
+/*	===============================
+	Font Swatches
+	===============================	
+	"font1":  == Heading 1
+	"font2":  == Heading 2
+	"font3":  == Heading 3
+	"font4":  == Heading 4
+	"font5":  == Paragraph
+	"font6":  == Navigation Text
+	"font7":  == Buttons
+	"font8":  == Feature Title
+	"font9":  == Feature Subtitle
+	"font10": == Logo
+	=============================== */
+
+
+/*	===============================
+	Bootstrap import
+	=============================== */
+@import "@{templateCommon}/basekit-bootstrap.less";
+
+
+/*	===============================
+	Template Styles
+	=============================== */
+
+// 1. Globals
+html {
+	height:100%;
+	min-height:100%;
+}
+body {
+	min-height:100%;
+	background: image('/img/header-bg.jpg') no-repeat center top;
+	background-size: 100% auto;
+}
+
+html, body {
+	background-color: @color-swatch1;
+	
+	font-family:@font-swatch5-font-family;
+	font-weight: @font-swatch5-font-weight;
+	color:@font-swatch5-color;
+	line-height:@font-swatch5-line-height;
+	letter-spacing: @font-swatch5-letter-spacing;
+	font-size: @font-swatch5-font-size;
+}
+
+h1 {
+	font-family:@font-swatch1-font-family; 
+	font-weight: @font-swatch1-font-weight; 
+	color:@font-swatch1-color; 
+	line-height:@font-swatch1-line-height; 
+	letter-spacing: @font-swatch1-letter-spacing; 
+	font-size: @font-swatch1-font-size;
+	a {
+		font-family:@font-swatch1-font-family; 
+		font-weight: @font-swatch1-font-weight; 
+		line-height:@font-swatch1-line-height; 
+		letter-spacing: @font-swatch1-letter-spacing; 
+		font-size: @font-swatch1-font-size;
+	}
+}
+
+h2 {
+	font-family:@font-swatch2-font-family; 
+	font-weight: @font-swatch2-font-weight; 
+	color:@font-swatch2-color; 
+	line-height:@font-swatch2-line-height; 
+	letter-spacing: @font-swatch2-letter-spacing; 
+	font-size: @font-swatch2-font-size;
+	a {
+		font-family:@font-swatch2-font-family; 
+		font-weight: @font-swatch2-font-weight; 
+		line-height:@font-swatch2-line-height; 
+		letter-spacing: @font-swatch2-letter-spacing; 
+		font-size: @font-swatch2-font-size;
+	}
+}
+
+h3 {
+	font-family:@font-swatch3-font-family; 
+	font-weight: @font-swatch3-font-weight; 
+	color:@font-swatch3-color; 
+	line-height:@font-swatch3-line-height; 
+	letter-spacing: @font-swatch3-letter-spacing; 
+	font-size: @font-swatch3-font-size;
+	a {
+		font-family:@font-swatch3-font-family; 
+		font-weight: @font-swatch3-font-weight; 
+		line-height:@font-swatch3-line-height; 
+		letter-spacing: @font-swatch3-letter-spacing; 
+		font-size: @font-swatch3-font-size;
+	}
+}
+
+h4 {
+	font-family:@font-swatch4-font-family; 
+	font-weight: @font-swatch4-font-weight; 
+	color:@font-swatch4-color; 
+	line-height:@font-swatch4-line-height; 
+	letter-spacing: @font-swatch4-letter-spacing; 
+	font-size: @font-swatch4-font-size;
+	a {
+		font-family:@font-swatch4-font-family; 
+		font-weight: @font-swatch4-font-weight; 
+		line-height:@font-swatch4-line-height; 
+		letter-spacing: @font-swatch4-letter-spacing; 
+		font-size: @font-swatch4-font-size;
+	}
+}
+
+h5 {
+	font-family:@font-swatch5-font-family;
+	font-weight: @font-swatch5-font-weight;
+	color:@font-swatch5-color;
+	line-height:@font-swatch5-line-height;
+	letter-spacing: @font-swatch5-letter-spacing;
+	font-size: @font-swatch5-font-size;
+	a {
+		font-family:@font-swatch5-font-family;
+		font-weight: @font-swatch5-font-weight;
+		line-height:@font-swatch5-line-height;
+		letter-spacing: @font-swatch5-letter-spacing;
+		font-size: @font-swatch5-font-size;
+	}
+}
+
+h6 {
+	font-family:@font-swatch6-font-family;
+	font-weight: @font-swatch6-font-weight;
+	color:@font-swatch6-color;
+	line-height:@font-swatch6-line-height;
+	letter-spacing: @font-swatch6-letter-spacing;
+	font-size: @font-swatch6-font-size;
+	a {
+		font-family:@font-swatch6-font-family;
+		font-weight: @font-swatch6-font-weight;
+		line-height:@font-swatch6-line-height;
+		letter-spacing: @font-swatch6-letter-spacing;
+		font-size: @font-swatch6-font-size;		
+	}
+}
+
+p,
+.contactform label,
+.twitter ul li a,
+.signupform label {
+	font-family:@font-swatch5-font-family;
+	font-weight: @font-swatch5-font-weight;
+	color:@font-swatch5-color;
+	line-height:@font-swatch5-line-height;
+	letter-spacing: @font-swatch5-letter-spacing;
+	font-size: @font-swatch5-font-size;
+}
+
+a {
+	color: @color-swatch2;
+	text-decoration: none;
+	&:hover {
+		color: darken(@color-swatch2, 30%);
+		text-decoration: none;
+	}
+}
+
+.main-wrap {
+	background-color: @color-swatch1;
+	float: left;
+	width: 100%;
+}
+.main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+	clear: both;
+}
+
+hr.line {
+	background-color: lighten(@color-swatch5, 75%)
+}
+
+// 2. Header
+.template-header {
+	position: relative;
+	color: @color-swatch1;
+
+	overflow: hidden;
+	position: relative;
+	.template-aside {
+		position: absolute;
+	}
+	.left {
+		top: 0;
+		left: 0;
+		text-align: left;
+	}
+	.right {
+		top: 10px;
+		right: 0;
+		text-align: right;
+	}
+	h1, h2 {
+		color: @color-swatch2;
+	}
+	.widget.companyname a {
+		color: @color-swatch1;
+	}
+}
+
+.template-aside {
+	width: 50%;
+	padding: 20px 25px;
+	float: left
+}
+
+.header-feature {
+	position: relative;
+	overflow: hidden;
+	height: 300px;
+	border: 20px solid @color-swatch1;
+	border-bottom-width: 0;
+	.logo img {
+		max-width: 120px;
+	}
+}
+
+#header-fixed {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+
+#parallax {
+	margin-top: 35px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+// 3. Navigation
+
+.nav {
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	
+	position: relative;
+	text-align: center;
+	padding: 0 20px;
+	ul {
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		border-bottom: 1px solid @color-swatch2;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		padding: 20px 25px;
+		display: inline-block;
+	}
+}
+
+.template-nav {
+	padding: 0 20px;
+	float: left;
+	width: 100%;
+	min-height: 49px;
+}
+
+.widget .extendednavigation {
+	text-align: center;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid lighten(@font-swatch6-color, 35%);
+}
+
+.widget .extendednavigation ul {
+	max-width: 1000px;
+	margin: 0 auto;
+	float: none;
+	li {
+		float: none;
+		text-align: center;
+		display: inline-block;
+		a, > .text {
+			padding: 10px 20px;
+			font-family:@font-swatch6-font-family;
+			font-weight: @font-swatch6-font-weight;
+			color:@font-swatch6-color;
+			line-height:@font-swatch6-line-height;
+			letter-spacing: @font-swatch6-letter-spacing;
+			font-size: @font-swatch6-font-size;
+		}
+	}
+	li.folder:after {
+		border-top-color: @font-swatch6-color;
+	}
+	li.folder:hover {
+		ul {
+			border: 1px solid lighten(@font-swatch6-color, 35%);
+			border-top: none;
+		}
+	}
+}
+
+.widget .extendednavigation a.pull {
+	width: 30px;
+	height: 30px;
+	top: 10px;
+	right: 0;
+	&:after {
+		background-color: @color-swatch2;
+		box-shadow: 0 6px 0 @color-swatch2, 0 12px 0 @color-swatch2;
+		left: 4px;
+		top: 7px;
+		width: 22px;
+	}
+}
+
+
+// 4. Home
+.home {
+	.header-feature {
+		height: 540px;
+		.logo img {
+			max-width: 100%;
+		}
+	}
+	#parallax {
+		margin-top: 180px;
+	}
+}
+
+// 5. Menu
+.widget.menu {
+	text-align: center;
+	border: none;
+
+	h1 {
+
+		text-decoration: underline;
+	}
+
+	h3 {
+
+		font-size: 20px;
+		color: @color-swatch3;
+		font-weight: 600;
+	}
+
+	h2 {
+		position: relative;
+		display: inline-block;
+		&:before, &:after {
+			z-index: 1;
+			display: block;
+			content: "";
+			position: absolute;
+			top: 40%;
+			right: 110%;
+			width: 1000%;
+			height: 1px;
+			background: lighten(@color-swatch2, 32%);
+		}
+		&:after {
+			left: 110%;
+		}
+	}
+}
+
+.menu-item {
+	padding: 10px 40px;
+}
+
+.menu-item-price {
+	p {
+		font-family:@font-swatch3-font-family;
+		font-weight:@font-swatch3-font-weight;
+		letter-spacing:@font-swatch3-letter-spacing;
+	}
+}
+
+.menu-subsection,
+.menu-item-promoted,
+.blog-post-metadata {
+	background-color: lighten(@color-swatch2, 62%);
+	border-radius: 2px;
+}
+
+.menu .menu-subsection li {
+	overflow: hidden;
+}
+
+.menu .menu-items li {
+	padding: 5px 0 12px;
+	margin-bottom: 20px;
+	&.menu-item-promoted {
+		padding: 5px 15px 12px;
+	}
+}
+
+.menu .menu-section-item-dietary-props .dietary-icon,
+.menu .menu-info .dietary-icon {
+	border-bottom: 1px solid lighten(@color-swatch2, 32%);
+}
+
+.menu-item-description {
+	padding-bottom: 10px;
+}
+
+.widget.menusections {
+	ul li {
+		margin: 0;
+	}
+	a {
+		padding: 10px 20px;
+		font-family:@font-swatch6-font-family;
+		font-weight: @font-swatch6-font-weight;
+		color:@font-swatch6-color;
+		line-height:@font-swatch6-line-height;
+		letter-spacing: @font-swatch6-letter-spacing;
+		font-size: @font-swatch6-font-size;
+		&:hover {
+			color: @color-swatch3;
+		}
+	}
+}
+
+// 6. Blog List
+.blog-post-item {
+	padding-bottom: 20px;
+}
+
+.widget.bloglistposts,
+.blogpost-page .blog-post-item {
+	padding: 20px 0;
+}
+
+div.blog-post-feature-image-wrap {
+	height: 350px;
+	margin-bottom: 5px;
+}
+
+.blog-list-footer {
+	text-align: center;
+	a {
+		margin: 0 50px;
+	}
+}
+
+// 7. Blog Post
+.blog-post-metadata {
+	padding: 10px 20px;
+	margin-top: 10px;
+}
+
+// 8. Forms
+label,
+.signupform fieldset label {
+	display: block;
+	padding-top: 10px;
+	margin-bottom: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=search],
+.signupform fieldset input[type=email],
+.widget.profile form fieldset input[type=email],
+textarea {
+	text-indent: 0;
+	height: auto;
+	background: darken(@color-swatch1, 5%);
+	border: 1px solid darken(@color-swatch1, 10%);
+	border-radius: 2px;
+	line-height:@font-swatch5-line-height;
+	font-size:@font-swatch5-font-size;
+	padding: 8px 10px;
+	&:focus {
+		border: 1px solid darken(@color-swatch1, 15%);
+	}	
+}
+
+textarea {
+	resize: vertical;
+}
+
+.widget.profile form fieldset input,
+.signupform fieldset input,
+input[type=search] {
+	width: 91%;
+}
+
+.contactform button.btn,
+button.btn,
+.widget.profile form button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.dropbox button,
+.clicktocall a,
+.signupform fieldset button,
+.blog-search-form button,
+.widget.socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
+.template-footer .widget.profile .bk-profile-socialicons span a {
+	-webkit-font-smoothing: inherit;
+	border: 1px solid @color-swatch3;
+	border-radius: 2px;
+	color: @color-swatch1;
+	background-color: lighten(@color-swatch3, 5%);
+	line-height:@font-swatch5-line-height;
+	font-size:@font-swatch5-font-size;
+	font-family:@font-swatch5-font-family;
+	cursor: pointer;
+	&:hover {
+		background-color: @color-swatch3;
+	}
+}
+
+.widget.socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
+.template-footer .widget.profile .bk-profile-socialicons span a	{
+	border-radius: 100%;
+}
+
+.clicktocall a,
+.blog-search-form button,
+.widget.profile form button,
+.signupform fieldset button {
+	padding: 8px 14px;
+	margin: 0;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	display: none;
+}
+
+.widget.clicktocall a {
+	display: inline-block;
+}
+
+// 9. Gallery / Images / Slideshow
+.widget.gallery {
+	margin: 0;
+}
+
+.widget.responsiveslideshow .slideshow-widget {
+	.btn-prev, .btn-next {
+		text-indent: 1000px;
+		overflow: hidden;
+		height: 30px;
+		width: 30px;
+		top: 50%;
+		margin-top: -15px;
+		&:before {
+			content: "";
+			display: block;
+			border: 5px solid transparent;
+			position: absolute;
+			top: 8px;
+			left: 11px;
+			width: 0;
+			height: 0;
+		}
+	}
+	.btn-next:before {
+		border-left-color: @color-swatch1;
+		left: 11px;
+	}
+	.btn-prev:before {
+		border-right-color: @color-swatch1;
+		left: 5px;
+	}
+}
+
+.widget.responsiveslideshow .slideshow-widget .btn-prev,
+.widget.responsiveslideshow .slideshow-widget .btn-next,
+.widget.responsiveslideshow .slideshow-widget .btn-play {
+	border: 2px solid @color-swatch2;
+	background-color: fadeout(@color-swatch2, 50%);
+	border-radius: 100%;
+}
+
+.widget.responsiveslideshow {
+	.slideshow-widget .btn-play, .btn-prev, .btn-next {
+		-webkit-transition: .2s;
+		-moz-transition: .2s;
+		-ms-transition: .2s;
+		transition: .2s;
+		opacity: .25;
+	}
+	&:hover {
+		.slideshow-widget .btn-play, .btn-prev, .btn-next {
+			opacity: .75;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.content-wrapper {
+		background: fadeout(@color-swatch1, 50%);
+		.title {
+			font-weight: @font-swatch3-font-weight;
+			&:after {
+				content: ":";
+			}
+		}
+		.title, .description {
+			color: @color-swatch5;
+		}
+		.title {
+			padding-right: 0;
+			padding-left: 6px;
+		}
+		.description {
+			padding-left: 0;
+		}
+	}
+}
+
+.widget.responsiveslideshow .slideshow-widget-controls .dot {
+	border-radius: 100%;
+	&.selected {
+		background-color: @color-swatch2;
+		border-width: 3px;
+	}
+}
+
+.widget.responsiveslideshow:hover span.btn-play,
+.widget.responsiveslideshow .slideshow-widget:hover .btn-play.pause {
+	&:before, &:after {
+		width: 8px;
+		height: 26px;
+		background: @color-swatch1;
+		border: 0;
+		top: 34%;
+		left: 28px;
+	}
+	&:after {
+		left: 40px;
+	}
+}
+.widget.responsiveslideshow .slideshow-widget .btn-play {
+	text-indent: -99999px;
+	width: 80px;
+	height: 80px;
+	top: 50%;
+	left: 50%;
+	margin-left: -40px;
+	margin-top: -40px;
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border: 20px solid transparent;
+		border-left-color: @color-swatch1;
+		left: 32px;
+		top: 30%;
+		border-top-width: 15px;
+		border-bottom-width: 15px;
+	}
+}
+
+.widget.gallery ul li span.inner,
+.blog-post-feature-image-wrap,
+.menu-item-image-wrap,
+.widget.map {
+	border: 1px solid @color-swatch3;
+	border-radius: 2px;
+}
+
+.blog-post-feature-image-wrap,
+.menu-item-image-wrap {
+	width: 100%;
+	height: 200px;
+	line-height: 0;
+	background-size: cover;
+	background-position: center;
+	img {
+		display: none;
+	}
+}
+
+.menu-item-image-wrap {
+	height: 200px;
+}
+
+// 10. Footer
+.template-footer {
+	margin: 0 20px;
+	border-top: 1px solid darken(@color-swatch1, 10%);
+}
+
+.footer-content {
+	max-width: 1010px;
+	margin: 0 auto;
+}
+
+// 11. Misc
+// Nothing to see here
+
+// 12. Responsive
+@media @tablet {
+	.header-feature,
+	.home .header-feature {
+		height: 255px;
+		.logo img {
+			max-width: 120px;
+		}
+		#parallax {
+			margin-top: 50px;
+		}
+	}
+	.template-header .template-aside {
+		display: none;
+	}
+	.widget.profile form fieldset input,
+	.signupform fieldset input,
+	input[type=search] {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.template-footer {
+		padding-bottom: 40px;
+		float: left;
+		.template-aside {
+			width: 100%;
+			padding: 20px 0 0 0;
+		}
+	}
+	.widget .extendednavigation {
+		border-bottom: none;
+	}
+	.widget .extendednavigation ul {
+		padding: 0;
+	}
+	.widget .extendednavigation ul li,
+	.widget .extendednavigation ul.align-left li {
+		padding: 0;
+		border-bottom: 1px solid darken(@color-swatch1, 10%);
+	}
+	.template-nav {
+		border-bottom: 1px solid darken(@color-swatch1, 10%);
+		margin: 0 20px;
+		padding: 0;
+		float: none;
+		width: auto;
+	}
+	.main-wrap {
+		width: 100%;
+	}
+	.widget .extendednavigation ul li.folder:hover ul {
+		margin: 1px 0 0;
+		border: none;
+	}
+}
