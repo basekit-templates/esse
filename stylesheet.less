@@ -797,3 +797,24 @@ input[type="search"]::-webkit-search-decoration {
 		border: none;
 	}
 }
+
+.template-print {
+	.header-feature {
+		height:auto;
+		min-height:300px;
+	}
+	#parallax {
+		margin:20px auto;
+	}
+	.template-aside {
+		display:none;
+	}
+}
+
+@media print {
+	.template-print;
+}
+
+.bk-print {
+	.template-print;
+}
