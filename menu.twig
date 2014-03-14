@@ -2,7 +2,8 @@
 {% block content %}
 
 <section class="section main menu-page">
-	{{zone('main')|raw}}
+	{{widget('menusections', 'menusections1', {})|raw}}
+	{{widget('menu', 'menu1', {})|raw}}
 </section>
 
 {% endblock %}

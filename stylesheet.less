@@ -449,7 +449,6 @@ hr.line {
 }
 
 .widget.menusections {
-	text-align: center;
 	ul li {
 		margin: 0;
 	}
@@ -545,16 +544,16 @@ button.btn,
 .widget.profile .bk-profile-socialicons span a,
 .template-footer .widget.profile .bk-profile-socialicons span a {
 	-webkit-font-smoothing: inherit;
-	border: 1px solid darken(@font-swatch7-background-color, 5%);
+	border: 1px solid @color-swatch3;
 	border-radius: 2px;
-	color: @font-swatch7-color;
-	background-color: @font-swatch7-background-color;
-	line-height: @font-swatch7-line-height;
-	font-size: @font-swatch7-font-size;
-	font-family: @font-swatch7-font-family;
+	color: @color-swatch1;
+	background-color: lighten(@color-swatch3, 5%);
+	line-height:@font-swatch5-line-height;
+	font-size:@font-swatch5-font-size;
+	font-family:@font-swatch5-font-family;
 	cursor: pointer;
 	&:hover {
-		background-color: @font-swatch7-background-color-hover;
+		background-color: @color-swatch3;
 	}
 }
 
@@ -796,25 +795,4 @@ input[type="search"]::-webkit-search-decoration {
 		margin: 1px 0 0;
 		border: none;
 	}
-}
-
-.template-print {
-	.header-feature {
-		height:auto;
-		min-height:300px;
-	}
-	#parallax {
-		margin:20px auto;
-	}
-	.template-aside {
-		display:none;
-	}
-}
-
-@media print {
-	.template-print;
-}
-
-.bk-print {
-	.template-print;
 }
