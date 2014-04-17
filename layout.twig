@@ -6,23 +6,6 @@
 		{% include "head.twig" %}
 		
 		{% include basekit.headScript %}
-		
-		<script type="text/javascript">
-			$(function() {
-				$('a[href*=#]:not([href=#])').click(function() {
-					if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-						var target = $(this.hash);
-						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-						if (target.length) {
-							$('html,body').animate({
-								scrollTop: target.offset().top
-							}, 1000);
-							return false;
-						}
-					}
-				});
-			});
-		</script>
 
 	</head>
 
@@ -38,7 +21,12 @@
 			{% include "footer.twig" %}
 
 		</div>
-		
+
+		{% include basekit.bodyScript %}
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
+
 		<script type="text/javascript">
 			!function() {
 				function supportsSVG() {
@@ -56,8 +44,6 @@
 				document.getElementById("image-fixed").style.backgroundPosition = "center "+(window.pageYOffset)+"px";
 			}
 		</script>
-
-		{% include basekit.bodyScript %}
 
 	</body>
 </html>
